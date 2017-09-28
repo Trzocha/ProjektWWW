@@ -1,0 +1,363 @@
+html
+{
+	font-size: 20px;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	background-image: url("../img/powitanie.JPG");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+#button
+{
+	display: table;
+	bottom: 10%;
+	left: 35%;
+	position: absolute; 
+}
+#button a:hover
+{
+	cursor: pointer;
+	opacity: 1;
+	transition: 0.5s;
+        color: white;
+}
+#button a{
+	box-shadow: 0px 4px 0px 0px white;
+	background:linear-gradient(to bottom, rgb(76,76,76) 0%, rgb(89,89,89) 12%, rgb(102,102,102) 25%, rgb(71,71,71) 39%, 
+	rgb(44,44,44) 50%, rgb(0,0,0) 51%, rgb(82,82,82) 60%, rgb(74,73,74) 76%, rgb(28,28,28) 91%, rgb(19,19,19) 100%);
+	border-radius:1rem;
+	display:inline-block;
+	cursor:pointer;
+	color:#c23d2e;
+	font-family:Trebuchet MS;   
+	font-size:0.8rem;
+	font-style:italic;
+	padding:0.5rem 1.5rem;
+	text-decoration:none;
+	text-shadow: 0px 1px 0px #e1e2ed;
+	opacity: 0.7;
+}
+#button a:active
+{
+	position: relative;
+	bottom: -2px;
+        box-shadow: 0px 1px 0px 0px white;
+}
+
+#name, #surname ,#deepThink
+{
+	position: absolute;
+	display: block;
+        font-family: 'Indie Flower', cursive;
+       color: #c23d2e;
+       text-shadow: 2px 2px rgb(2, 0, 0);
+}
+#name{
+    top: 10%;
+    left: 10%;
+    font-size: 2.5rem;
+}
+span.T{
+    position: inherit;
+    font-size: 6rem;
+    left: 46%;
+    top: -50%;
+}
+#surname{
+    top: 16.5%;
+    left: 52%;
+    font-size: 1.9rem;
+}
+#deepThink
+{
+    font-family: 'Princess Sofia', cursive;
+    font-size: 1rem;
+    color: white;
+    top:25%;
+    left:15%;
+}
+img#main{
+    position: absolute;
+    border-radius: 4rem;
+    bottom: 24%;
+    left: 29%;
+    opacity:0.9;
+    filter: grayscale(35%) drop-shadow(2px -1px 1px white);
+}
+/*--------------------------------------------------------------------------------------*/
+#Menu_rozwijane
+{
+	position: relative;
+	top: 15%;
+        font-size: 0.8rem;
+}
+#Menu ul                       /*zresetowanie ustawien na ul z odległosciami */
+{
+	margin: 0px;
+	padding: 0px;
+}
+#Menu a
+{
+	text-decoration: none;
+	display: block;
+	color: white;
+}
+#Menu li
+{
+	list-style: none;
+}	
+#Menu > li
+{
+	float: left;
+}
+#Menu > li > a
+{
+	background: linear-gradient(to bottom, rgba(76,76,76,0.7) 0%, rgba(89,89,89,0.7) 12%, rgba(102,102,102,0.7) 25%, rgba(71,71,71,0.7) 39%, 
+	rgba(44,44,44,0.7) 50%, rgba(0,0,0,0.7) 51%, rgba(82,82,82,0.7) 60%, rgba(74,73,74,0.7) 76%, rgba(28,28,28,0.7) 91%, rgba(19,19,19,0.7) 100%);
+	padding: 0.5rem;
+	border-left: 1px solid #de5745;
+	border-bottom: 1px solid #de5745;
+}
+#Menu > li > a:hover
+{
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, 
+	rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(82,82,82,1) 60%, rgba(74,73,74,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+	 color: #de5745;
+	 cursor: pointer;
+	 transition: 0.4s;
+}
+#Menu >li:first-child > a
+{
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+#Menu >li:last-child > a
+{
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+#Menu >li ul li a
+{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.6rem;
+	border-bottom: 1px solid #de5745;
+}
+#Menu >li ul 
+{
+	position: absolute;
+	background: linear-gradient(to bottom, rgba(76,76,76,0.7) 0%, rgba(89,89,89,0.7) 12%, rgba(102,102,102,0.7) 25%, rgba(71,71,71,0.7) 39%, 
+	rgba(44,44,44,0.7) 50%, rgba(0,0,0,0.7) 51%, rgba(82,82,82,0.7) 60%, rgba(74,73,74,0.7) 76%, rgba(28,28,28,0.7) 91%, rgba(19,19,19,0.7) 100%);
+	border-left: 1px solid #de5745;
+	opacity: 0;
+} 
+#Menu > li ul li a:hover
+{
+	cursor: pointer;
+	color: #de5745;
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, 
+	rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(82,82,82,1) 60%, rgba(74,73,74,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+	transition: 0.4s;
+	
+}
+#Menu > li:hover ul
+{
+	opacity: 1;
+	transition: 0.3s;
+}
+
+/*Kostka3D----------------------------------------------------------------------------------------------*/
+#scena
+{
+	width: 200px;
+	height: 200px;
+	perspective: 1000px;
+	position: relative;
+	left: 15%;
+	top: 30%;
+	
+}
+#kostka3D
+{
+	position: absolute;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+        transition: 2s;
+}
+.sciana
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0.9;
+}
+.sciana:hover
+{
+    cursor: pointer;
+}
+div.gorna
+{
+	background-image:url('../img/widoki3.JPG');
+	transform: rotateX(90deg) translateZ(100px);
+}
+
+div.dolna
+{
+	background-image:url('../img/widoki4.JPG');
+	transform: rotateX(-90deg) translateZ(100px);
+}
+div.bocznaL
+{
+	background-image:url('../img/widoki5.JPG');
+	transform: rotateY(-90deg) translateZ(100px);
+}
+div.bocznaP
+{
+	background-image:url('../img/widoki6.JPG');
+	transform: rotateY(-90deg) translateZ(-100px);
+}
+div.tylna
+{
+         background-image:url('../img/widoki2.JPG');
+	transform: rotateY(180deg) translateZ(100px);
+}
+div.przednia
+{
+        background-image:url('../img/widoki1.JPG');
+	transform: translateZ(100px);
+}
+
+@keyframes obracanie_kostki3D
+{
+	from
+	{
+		
+	}
+	to
+	{
+		transform: rotateY(180deg) rotateX(270deg);
+	}
+}
+.obrazki_z_kostki3D
+{
+	position: absolute;
+        top: 15%;
+	right: 10%;
+	opacity: 0;
+}
+
+.obrazki
+{
+    opacity: 1;
+    transition: 2s;
+}
+
+#butony_ruchu img
+{
+     position: absolute;
+     width: 40px;
+     height: 40px;
+     cursor: pointer;
+     opacity: 0.7;
+}
+#butony_ruchu img:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.b0 /*prawy*/
+{
+    top:25%;
+    left: 40%;
+}
+.b1 /*lewy*/
+{
+    top:25%;
+    left: 34%;
+}
+.b2 /*dol*/
+{
+    top:30%;
+    left: 37%;
+}
+.b3 /*gora*/
+{
+    top:20%;
+    left: 37%;
+}
+
+#butony_animacji img
+{
+    border-radius: 20px;
+    position: absolute;
+    top: 45%;
+    opacity: 0.8;
+}
+#butony_animacji img:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}
+.a0
+{
+    left:34%;
+}
+.a1
+{
+    left:40%;
+}
+.anim
+{
+    opacity: 1;
+    animation: obracanie_kostki3D 7s infinite alternate;
+}
+
+form{
+    display: block;
+    position: absolute;
+    right: 2%;
+    color: white;
+}
+
+@media (orientation: landscape){
+    img#main{
+    bottom: 20%;
+    left: 42%;
+    height: 50%;
+    }
+    #button a{
+        padding:0.4rem 1rem;
+    }
+    #button{
+        bottom: 8%;
+	left: 40%;
+    }
+    #name{
+         font-size: 2rem;
+    }
+    span.T{
+        font-size: 4.8rem;
+    }
+    #surname{
+        font-size: 1.5rem;
+        top: 19%;
+        left: 30%;
+    }
+    #deepThink
+    {
+    font-size: 0.8rem;
+    top:30%;
+    left:30%;
+    }
+}
+
+@media (orientation: portrait){
+   
+}

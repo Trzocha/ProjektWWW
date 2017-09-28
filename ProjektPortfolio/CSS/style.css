@@ -1,0 +1,1146 @@
+html
+{
+	font-size: 20px;
+/*        height: 100vh;
+        background-color: rgb(0,0,0);
+        opacity:0.4;*/
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+/*	background-image: url("../img/powitanie.JPG");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;*/
+}
+#backgImg{
+         background-image: url("../img/powitanie.JPG");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+#backK3D{
+        background-image: radial-gradient(ellipse closest-corner at center, #757A62 0%, #1E1F04 100%);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+section{
+    height: 100%;
+}
+h1, h2, figure{
+    margin: 0px;
+    padding: 0px;
+}
+/*#mainPage{
+    background-image: url("../img/powitanie.JPG");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}*/
+#lessPage{
+    position: relative;
+/*background-image: linear-gradient(to top, #A89F72 0%, #60BF4D 100%);*/
+}
+/*#tlo{
+    height: 100vh;
+    background-color: rgb(0,0,0);
+    opacity:0.4;
+}*/
+#button
+{
+	display: table;
+	bottom: 10%;
+	left: 50%;
+	position: absolute; 
+        transform: translate(-50%,0%);
+}
+#button a:hover
+{
+	cursor: pointer;
+	opacity: 1;
+	transition: 0.5s;
+        color: white;
+}
+#button a{
+	box-shadow: 0px 4px 0px 0px white;
+	background:linear-gradient(to bottom, rgb(76,76,76) 0%, rgb(89,89,89) 12%, rgb(102,102,102) 25%, rgb(71,71,71) 39%, 
+	rgb(44,44,44) 50%, rgb(0,0,0) 51%, rgb(82,82,82) 60%, rgb(74,73,74) 76%, rgb(28,28,28) 91%, rgb(19,19,19) 100%);
+	border-radius:1rem;
+	display:inline-block;
+	cursor:pointer;
+	color:#c23d2e;
+	font-family:Trebuchet MS;   
+	font-size:0.8rem;
+	font-style:italic;
+	padding:0.5rem 1.5rem;
+	text-decoration:none;
+	text-shadow: 0px 1px 0px #e1e2ed;
+	opacity: 0.7;
+}
+#button a:active
+{
+	position: relative;
+	bottom: -2px;
+        box-shadow: 0px 1px 0px 0px white;
+}
+
+#name, #surname ,#deepThink
+{
+	position: absolute;
+	display: block;
+        font-family: 'Indie Flower', cursive;
+       color: #c23d2e;
+       text-shadow: 2px 2px rgb(2, 0, 0);
+}
+#name{
+    top: 7%;
+    left: 10%;
+    /*font-size: 2.5rem;*/
+}
+span.T{
+    position: inherit;
+    font-size: 6rem;
+    left: 46%;
+    top: -50%;
+}
+#surname{
+    top: 16.5%;
+    left: 52%;
+    font-size: 1.9rem;
+}
+#deepThink
+{
+    font-family: 'Princess Sofia', cursive;
+    font-size: 1rem;
+    color: white;
+    top:25%;
+    left:15%;
+}
+img#autorImg{
+    position: absolute;
+    border-radius: 4rem;
+    bottom: 24%;
+    left: 29%;
+    opacity:0.9;
+    filter: grayscale(35%) drop-shadow(2px -1px 1px white);
+}
+/*--------------------------------------------------------------------------------------*/
+#nawigacja{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 10%;
+    width: 100%;
+}
+
+#Menu_rozwijane
+{
+        font-size: 0.8rem;
+}
+ #Menu ul                       /*zresetowanie ustawien na ul z odległosciami */
+{
+	margin: 0px;
+	padding: 0px;
+}
+#Menu{
+    padding: 0px;
+    margin: 0px;
+}
+#Menu a
+{
+	text-decoration: none;
+	display: block;
+	color: white;
+}
+#Menu li
+{
+	list-style: none;
+}	
+ #Menu > li
+{
+	float: left;
+}
+#Menu > li > a
+{
+	background: linear-gradient(to bottom, rgba(76,76,76,0.7) 0%, rgba(89,89,89,0.7) 12%, rgba(102,102,102,0.7) 25%, rgba(71,71,71,0.7) 39%, 
+	rgba(44,44,44,0.7) 50%, rgba(0,0,0,0.7) 51%, rgba(82,82,82,0.7) 60%, rgba(74,73,74,0.7) 76%, rgba(28,28,28,0.7) 91%, rgba(19,19,19,0.7) 100%);
+	padding: 0.5rem;
+	border-left: 1px solid #de5745;
+	border-bottom: 1px solid #de5745;
+}
+#Menu > li > a:hover
+{
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, 
+	rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(82,82,82,1) 60%, rgba(74,73,74,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+	 color: #de5745;
+	 cursor: pointer;
+	 transition: 0.4s;
+}
+#Menu >li:first-child > a
+{
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+#nawigacja #Menu >li:last-child > a
+{
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+ #Menu >li ul li a
+{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.6rem;
+	border-bottom: 1px solid #de5745;
+}
+ #Menu >li ul 
+{
+	position: absolute;
+	background: linear-gradient(to bottom, rgba(76,76,76,0.7) 0%, rgba(89,89,89,0.7) 12%, rgba(102,102,102,0.7) 25%, rgba(71,71,71,0.7) 39%, 
+	rgba(44,44,44,0.7) 50%, rgba(0,0,0,0.7) 51%, rgba(82,82,82,0.7) 60%, rgba(74,73,74,0.7) 76%, rgba(28,28,28,0.7) 91%, rgba(19,19,19,0.7) 100%);
+	border-left: 1px solid #de5745;
+	opacity: 0;
+} 
+ #Menu > li ul li a:hover
+{
+	cursor: pointer;
+	color: #de5745;
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, 
+	rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(82,82,82,1) 60%, rgba(74,73,74,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+	transition: 0.4s;
+	
+}
+ #Menu > li:hover ul
+{
+	opacity: 1;
+	transition: 0.3s;
+        z-index: 1;
+}
+#opis{
+    position: absolute;
+    height: 55%;
+    width: 75%;
+    background-color: #E3F5AB;
+    font-size: 0.5rem;
+    top:50%;
+    left:50%;
+    transform: translate(-52%,-45%);
+}
+#opis p{
+    font-size: 0.5rem;
+}
+
+/*Kostka3D----------------------------------------------------------------------------------------------*/
+#scena
+{
+	perspective: 1000px;
+	position: relative;	
+}
+#kostka3D
+{
+	position: absolute;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+        transition: 1s;
+        transform: rotateX(-10deg) rotateY(-10deg);
+}
+.sciana
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+}
+.sciana:hover
+{
+    cursor: pointer;
+}
+div.gorna
+{       background-size: 100% 100%;
+	background-image:url('../img/widoki3.JPG');  
+}
+
+div.dolna
+{       background-size: 100% 100%;
+	background-image:url('../img/widoki4.JPG');      
+}
+div.bocznaL
+{       background-size: 100% 100%;
+	background-image:url('../img/widoki5.JPG');      
+}
+div.bocznaP
+{       background-size: 100% 100%;
+	background-image:url('../img/widoki6.JPG');      
+}
+div.tylna
+{        background-size: 100% 100%;
+         background-image:url('../img/widoki2.JPG');      
+}
+div.przednia
+{       background-size: 100% 100%;
+        background-image:url('../img/widoki1.JPG');
+}
+
+.obrotX180{
+    animation: obrotX180 2s 2 ease-in-out;
+    animation-delay: 2s;
+}
+/*.obrotX90{                                   testy
+    animation-timing-function: ease-in-out;
+    animation: obrotX90 2s 2 alternate;
+    animation-delay: 2s;
+}*/
+@keyframes obrotX180{
+    from{
+       
+    }
+    to{
+        transform: rotateX(180deg);
+    }
+}
+/*@keyframes obrotX90{                          testy
+    from{
+       
+    }
+    to{
+        //height: 100%;
+      //  transform: rotateY(-180deg) translateZ(100px);
+        transform: rotateX(20deg) rotateY(30deg);
+    }
+}*/
+/*@keyframes obracanie_kostki3D
+{
+	from
+	{
+		
+	}
+	to
+	{
+		transform: rotateY(180deg) rotateX(270deg);
+	}
+}*/
+.obrazki_z_kostki3D
+{
+	position: absolute;
+        left: 45%;
+	opacity: 0;
+        box-shadow: 10px 10px 5px 0px rgba(255,255,255,1);
+}
+
+.zanikajaceObrazki{
+    animation: imgGone 4s 1 alternate;
+}
+@keyframes imgGone{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+/*przyciski kontrolowanego obrotu kostki*/
+#butony_ruchu img
+{
+     position: absolute;
+     cursor: pointer;
+     opacity: 0.5;
+}
+#butony_ruchu img:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+/*.butt0 prawy
+{
+    top:25%;
+    left: 40%;
+}
+.butt1 lewy
+{
+    top:25%;
+    left: 34%;
+}
+.butt2 dol
+{
+    top:30%;
+    left: 37%;
+}
+.butt3 gora
+{
+    top:20%;
+    left: 37%;
+}*/
+/*play stop-----------------*/
+/*#butony_animacji img
+{
+    border-radius: 1rem;
+    position: absolute;
+    opacity: 0.8;
+}
+#butony_animacji img:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}*/
+/*.anim0   button play
+{
+    //left:34%;
+}
+.anim1   button stop
+{
+   // left:40%;
+}*/
+/*.anim     animacja kostki po wcisnieciu play
+{
+    opacity: 1;
+    animation: obracanie_kostki3D 7s infinite alternate;
+}*/
+
+/*form{
+    display: block;
+    position: absolute;
+    right: 2%;
+    color: white;
+}*/
+canvas{
+    background-color: white;
+    position: absolute;
+    top:35%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#controlPanel img{
+    position: absolute;
+
+}
+#prawo{
+   top:50%;
+   left:20%;
+}
+#lewo{
+   top:50%;
+   left:5%;
+}
+#gora{
+   top: 40%;
+   right :15%;
+}
+#dol{
+   top:60%;
+   right :15%;
+}
+/*------------------------------------Slajder--------------------*/
+#viewImg{
+    background-color: #1f3b08;
+    display: flex;
+    align-items: flex-start; 
+}
+#obiektyImg{
+    height: 80%;
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+     flex-wrap: wrap;
+     flex-direction:row;
+}
+
+.kontenerImg:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.kontenerImg{ 
+   height: 120px;
+   padding: 2%;
+   position: relative;
+   opacity: 0.8;
+}
+.widoki{
+    height: inherit;
+}
+.kontenerImg h6{
+    font-size: 1rem;
+    margin: 0px;
+    padding: 10% 0px 0px 0px;
+}
+h6{
+    position: absolute;
+    bottom:6%;
+    left:50%;
+    color:white;
+    transform: translate(-50%,0%);
+    margin-top: 10%;
+    background-color: rgba(0,0,0,0.2);
+    
+}
+/*--------------------------------------------------------------------*/
+@media (orientation: landscape){
+    canvas{
+        height: 70%;
+        top:45%;
+    }
+    img#autorImg{
+        bottom: 20%;
+        left: 42%;
+        height: 50%;
+     }
+     #nawigacja{
+       justify-content: flex-start;
+       left :5%;
+     }
+    #button a{
+        padding:0.4rem 1rem;
+    }
+    #button{
+        bottom: 7%;
+    } 
+    #name{
+         font-size: 2.5rem;
+    }
+    span.T{
+        font-size: 6rem;
+    }
+    #surname{
+        font-size: 1.5rem;
+        top: 65%;
+        left: 72%;
+    }
+    #deepThink
+    {
+        font-size: 0.8rem;
+        top:32%;
+        left:27%;
+    }
+/*    #Menu_rozwijane{
+        top:10%;
+    }*/
+    #scena{
+	width: 5rem;
+	height: 5rem;
+        left: 10%;
+	top: 50%;
+        transform: translate(0%,-50%);
+    }
+    .gorna{
+            transform: rotateX(90deg) translateZ(2.5rem);     
+    }
+
+    .dolna{
+            transform: rotateX(270deg) translateZ(2.5rem);
+    }
+    .bocznaL{
+            transform: rotateY(-90deg) translateZ(2.5rem);
+    }
+    .bocznaP{
+            transform: rotateY(-90deg) translateZ(-2.5rem);
+
+    }
+    div.tylna{
+            transform: rotateX(-180deg) translateZ(2.5rem);
+    }
+    .przednia{
+            transform: translateZ(2.5rem);
+    }
+    #butony_ruchu img{
+         width: 1.5rem;
+         height: 1.5rem;
+    }
+    .butt0 /*prawy*/{
+        top: 40%;
+        left: 42%;
+    }
+    .butt1 /*lewy*/{
+        top: 40%;
+        left: 32%;
+    }
+    .butt2 /*dol*/{
+        top: 50%;
+        left: 37%;
+    }
+    .butt3 /*gora*/{
+        top:  30%;
+        left: 37%;
+    }
+/*    #butony_animacji img{
+        width: 1.5rem;
+        height: 1.5rem;
+        bottom: 25%;
+    }
+    .anim0   button play
+    {
+        left: 32%;
+    }
+    .anim1   button stop
+    {
+        left:42%;
+    }*/
+    .obrazki_z_kostki3D{
+        width: 15rem;
+        height: 10rem;
+        top:50%;
+        transform: translate(10%,-57%);
+    }
+     .ruchomeObrazki{          /*jakis animate na pojawianie sie i znikanie*/
+        opacity: 1;
+        animation: imgMoveLS 4s 1 alternate;
+        z-index:1;
+    }
+    
+}
+
+
+@media (orientation: portrait ){
+    canvas{
+        height: 60%;
+        //top:45%;
+       // left: 20%;
+    }
+    img#autorImg{
+        bottom: 20%;
+        left: 30%;
+        height: 45%;
+    }
+    #button a{
+        padding:0.5rem 1.5rem;
+    }
+    #button{
+      bottom: 10%;
+    }
+    #name{
+         top: 15%;
+         font-size: 2.5rem;
+    }
+    span.T{
+        font-size: 6rem;
+    }
+    #surname{
+        top: 60%;
+        left: 72%;
+        font-size: 1.8rem;
+    }
+    #deepThink
+    {
+        font-size: 1rem;
+        top:30%;
+        left:18%;
+    }
+/*    #Menu_rozwijane{
+        top: 10%;
+        //transform: translate(7%,0%);
+    }*/
+    #opis{
+        height: 60%;
+        transform: translate(-50%,-50%);
+    }
+    #scena{
+	width: 5rem;
+	height: 5rem;
+        top:20%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+    .gorna{
+            transform: rotateX(90deg) translateZ(2.5rem);     
+    }
+
+    .dolna{
+            transform: rotateX(270deg) translateZ(2.5rem);
+
+    }
+    .bocznaL{
+            transform: rotateY(-90deg) translateZ(2.5rem);
+    }
+    .bocznaP{
+            transform: rotateY(-90deg) translateZ(-2.5rem);
+    }
+    .tylna{
+            transform: rotateX(-180deg) translateZ(2.5rem);
+    }
+    .przednia{
+            transform: translateZ(2.5rem);
+    }
+    #butony_ruchu img{
+         width: 1.5rem;
+         height: 1.5rem;
+    }
+    .butt0 /*prawy*/{
+        top:35%;
+        left: 25%;
+    }
+    .butt1 /*lewy*/{
+        top:35%;
+        left: 5%;
+    }
+    .butt2 /*dol*/{
+        top:40%;
+        left: 15%;
+    }
+    .butt3 /*gora*/{
+        top:30%;
+        left: 15%;
+    }
+/*    #butony_animacji img{
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 35%;
+    }
+    .anim0   button play
+    {
+        right: 25%;
+    }
+    .anim1   button stop
+    {
+        right:15%;
+    }*/
+    .obrazki_z_kostki3D{
+        width: 15rem;
+        height: 10rem;
+        top: 63%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+    .ruchomeObrazki{          /*jakis animate na pojawianie sie i znikanie*/
+        opacity: 1;
+        animation: imgMoveP 4s 1 alternate;
+        z-index:1;
+    }
+    
+}
+
+@media (orientation: portrait)and (min-width: 768px){
+    img#autorImg{
+        bottom: 20%;
+        height: 44%;
+        left:35%;
+        border-radius: 8rem;
+    }
+   #name{
+         font-size: 4.5rem; 
+   }
+   span.T{
+        font-size: 10rem;    
+        left: 48%;
+   }
+   #surname{
+        font-size: 2.8rem;
+        top: 18%;
+        left: 46%;
+    }
+    #deepThink
+    {
+    font-size: 1.5rem;
+    top:25%;
+    left:25%;
+    }
+   #Menu > li > a{
+        padding: 0.7rem 2rem;
+    }
+    #Menu_rozwijane{
+        font-size: 1.2rem;
+    }
+     #Menu >li ul li a{
+	padding-top: 0.7rem;
+	padding-bottom: 0.7rem;
+	font-size: 1rem;
+    }
+    #scena{
+	width: 8rem;
+	height: 8rem;
+        left: 50%;
+	top: 18%;
+        transform: translate(-50%,-50%);
+    }
+    .gorna{
+            transform: rotateX(90deg) translateZ(4rem);     
+    }
+
+    .dolna{
+            transform: rotateX(270deg) translateZ(4rem);
+    }
+    .bocznaL{
+            transform: rotateY(-90deg) translateZ(4rem);
+    }
+    .bocznaP{
+            transform: rotateY(-90deg) translateZ(-4rem);
+
+    }
+    div.tylna{
+            transform: rotateX(-180deg) translateZ(4rem);
+    }
+    .przednia{
+            transform: translateZ(4rem);
+    }
+    #butony_ruchu img{
+         width: 2.2rem;
+         height: 2.2rem;
+    }
+    .butt0 /*prawy*/{
+/*        top:35%;*/
+        left: 20%;
+    }
+    .butt1 /*lewy*/{
+/*        top:35%;*/
+        left: 8%;
+    }
+    .butt2 /*dol*/{
+        top: 39%;
+        left: 14%;
+    }
+    .butt3 /*gora*/{
+        top: 31%;
+        left: 14%;
+    }
+/*    #butony_animacji img{
+        width: 2rem;
+        height: 2rem;
+        top: 60%;
+    }
+    .anim0   button play
+    {
+         left:32%;
+    }
+    .anim1   button stop
+    {
+        left:38%;
+    }*/
+    .obrazki_z_kostki3D{
+        width: 21rem;
+        height: 14rem;
+    }
+   .kontenerImg{ 
+        height: 200px;
+        padding: 4%;
+       /* position: relative;
+        opacity: 0.7;*/
+    }
+
+}
+
+@media (orientation: landscape) and (min-width: 768px){
+    img#autorImg{
+        bottom: 24%;
+        height: 45%;
+    }
+   #name{
+         font-size: 3rem; 
+         left: 5%;
+   }
+   span.T{
+        font-size: 7rem;    
+        left: 48%;
+   }
+   #surname{
+        font-size: 1.8rem;
+        top: 65%;
+        left: 75%;
+    }
+    #deepThink
+    {
+    font-size: 1rem;
+    top:32%;
+    left:32%;
+    }
+   #Menu > li > a{
+        padding: 0.7rem 2rem;
+    }
+    #Menu_rozwijane{
+        font-size: 1rem;
+    }
+    #Menu >li ul li a{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.8rem;
+    }
+    #scena{
+	width: 8rem;
+	height: 8rem;
+        left: 10%;
+	top: 50%;
+        transform: translate(-10%,-50%);
+    }
+    .gorna{
+            transform: rotateX(90deg) translateZ(4rem);     
+    }
+
+    .dolna{
+            transform: rotateX(270deg) translateZ(4rem);
+    }
+    .bocznaL{
+            transform: rotateY(-90deg) translateZ(4rem);
+    }
+    .bocznaP{
+            transform: rotateY(-90deg) translateZ(-4rem);
+
+    }
+    div.tylna{
+            transform: rotateX(-180deg) translateZ(4rem);
+    }
+    .przednia{
+            transform: translateZ(4rem);
+    }
+    #butony_ruchu img{
+         width: 1.8rem;
+         height: 1.8rem;
+         transform: translate(-50%,-50%);
+    }
+    .butt0 /*prawy*/{
+        top:48%;
+        left: 44%;
+    }
+    .butt1 /*lewy*/{
+        top:48%;
+        left: 36%;
+    }
+    .butt2 /*dol*/{
+        top:53%;
+        left: 40%;
+    }
+    .butt3 /*gora*/{
+        top: 43%;
+        left: 40%;
+    }
+/*    #butony_animacji img{
+        width: 2rem;
+        height: 2rem;
+        top: 60%;
+    }
+    .anim0   button play
+    {
+         left:32%;
+    }
+    .anim1   button stop
+    {
+        left:38%;
+    }*/
+    .obrazki_z_kostki3D{
+        width: 18rem;
+        height: 12rem;
+        top: 50%;
+	transform: translate(10%,-50%);
+    }
+    .ruchomeObrazki{          /*jakis animate na pojawianie sie i znikanie*/
+        opacity: 1;
+        animation: imgMoveLS768 4s 1 alternate;
+        z-index:1;
+    }
+    .kontenerImg{ 
+   height: 200px;
+   padding: 4%;
+  /* position: relative;
+   opacity: 0.7;*/
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    img#autorImg{
+        bottom: 19%;
+        height: 55%;
+    }
+   #name{
+         font-size: 4rem; 
+   }
+   span.T{
+        font-size: 9rem;    
+        left: 48%;
+   }
+   #surname{
+        font-size: 2.2rem;
+        top: 62%;
+        left: 73%;
+    }
+    #deepThink
+    {
+    font-size: 1.2rem;
+    top:30%;
+    left:32%;
+    }
+   #Menu > li > a{
+        padding: 0.7rem 2rem;
+    }
+    #Menu_rozwijane{
+        font-size: 1.2rem;
+    }
+    #Menu >li ul li a{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 1rem;
+    }
+    #scena{
+	width: 10rem;
+	height: 10rem;
+        left: 10%;
+	top: 50%;
+        transform: translate(-10%,-50%);
+    }
+    .gorna{
+            transform: rotateX(90deg) translateZ(5rem);     
+    }
+
+    .dolna{
+            transform: rotateX(270deg) translateZ(5rem);
+    }
+    .bocznaL{
+            transform: rotateY(-90deg) translateZ(5rem);
+    }
+    .bocznaP{
+            transform: rotateY(-90deg) translateZ(-5rem);
+
+    }
+    div.tylna{
+            transform: rotateX(-180deg) translateZ(5rem);
+    }
+    .przednia{
+            transform: translateZ(5rem);
+    }
+    #butony_ruchu img{
+         width: 1.8rem;
+         height: 1.8rem;
+         transform: translate(-30%,-50%);
+    }
+    .butt0 /*prawy*/{
+        top:50%;
+        left: 40%;
+    }
+    .butt1 /*lewy*/{
+        top:50%;
+        left: 33%;
+    }
+    .butt2 /*dol*/{
+        top:55%;
+        left: 36.5%;
+    }
+    .butt3 /*gora*/{
+        top: 45%;
+        left: 36.5%;
+    }
+/*    #butony_animacji img{
+        width: 2rem;
+        height: 2rem;
+        top: 60%;
+    }
+    .anim0   button play
+    {
+         left:32%;
+    }
+    .anim1   button stop
+    {
+        left:38%;
+    }*/
+    .obrazki_z_kostki3D{
+        width: 27rem;
+        height: 18rem;
+        top: 50%;
+	transform: translate(0%,-50%);
+    }
+    .ruchomeObrazki{          /*jakis animate na pojawianie sie i znikanie*/
+        opacity: 1;
+        animation: imgMoveHV1024 4s 1 alternate;
+        z-index:1;
+    }
+}
+@media screen and (min-width: 1200px){
+    img#autorImg{
+        bottom: 17%;
+        border-radius: 10rem;
+    }
+     .obrazki_z_kostki3D{
+        width: 30rem;
+        height: 20rem;
+        top: 50%;
+	transform: translate(0%,-50%);
+    }
+    .ruchomeObrazki{          /*jakis animate na pojawianie sie i znikanie*/
+        opacity: 1;
+        animation: imgMoveHV 4s 1 alternate;
+        z-index:1;
+    }
+}
+
+@keyframes imgMoveP{
+    0%{
+       opacity: 0.2;
+       width: 3rem;
+       height: 2rem;
+       top: 10%;
+    }
+    60%{
+        opacity: 0.4;
+    }
+    100%{
+       width: 15rem;
+       height: 10rem;
+       top: 63%;
+       transform: translate(-50%,-50%);
+    }
+}
+@keyframes imgMoveHV{
+    0%{
+       opacity: 0.2;
+       width: 3rem;
+       height: 2rem;
+       left: 10%;
+    }
+    60%{
+        opacity: 0.4;
+    }
+    100%{
+       width: 30rem;
+       height: 20rem;
+       transform: translate(0%,-50%);
+    }
+}
+@keyframes imgMoveHV1024{
+    0%{
+       opacity: 0.2;
+       width: 3rem;
+       height: 2rem;
+       left: 10%;
+    }
+    60%{
+        opacity: 0.4;
+    }
+    100%{
+       width: 27rem;
+       height: 18rem;
+       transform: translate(0%,-50%);
+    }
+}
+@keyframes imgMoveLS{
+    0%{
+       opacity: 0.2;
+       width: 3rem;
+       height: 2rem;
+       left: 10%;
+    }
+    60%{
+        opacity: 0.4;
+    }
+    100%{
+       width: 15rem;
+       height: 10rem;
+       transform: translate(10%,-57%);
+    }
+}
+@keyframes imgMoveLS768{
+    0%{
+       opacity: 0.2;
+       width: 3rem;
+       height: 2rem;
+       left: 10%;
+    }
+    60%{
+        opacity: 0.4;
+    }
+    100%{
+       width: 18rem;
+       height: 12rem;
+       transform: translate(10%,-50%);
+    }
+}
