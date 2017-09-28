@@ -231,7 +231,8 @@ img#autorImg{
     transform: translate(-52%,-45%);
 }
 #opis p{
-    font-size: 0.5rem;
+    font-size: .4rem;
+    font-family: 'Monda', sans-serif;
 }
 
 /*Kostka3D----------------------------------------------------------------------------------------------*/
@@ -602,7 +603,7 @@ h6{
        // left: 20%;
     }
     img#autorImg{
-        bottom: 20%;
+        bottom: 24%;
         left: 30%;
         height: 45%;
     }
@@ -613,7 +614,7 @@ h6{
       bottom: 10%;
     }
     #name{
-         top: 15%;
+         top: 10%;
          font-size: 2.5rem;
     }
     span.T{
@@ -627,7 +628,7 @@ h6{
     #deepThink
     {
         font-size: 1rem;
-        top:30%;
+        top:25%;
         left:18%;
     }
 /*    #Menu_rozwijane{
@@ -1060,6 +1061,9 @@ h6{
         opacity: 1;
         animation: imgMoveHV 4s 1 alternate;
         z-index:1;
+    }
+    #opis p{
+        font-size: .8rem;
     }
 }
 
