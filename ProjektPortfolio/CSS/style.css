@@ -1,22 +1,17 @@
 html
 {
 	font-size: 20px;
-/*        height: 100vh;
-        background-color: rgb(0,0,0);
-        opacity:0.4;*/
+
 }
 body
 {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-/*	background-image: url("../img/powitanie.JPG");
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;*/
+
 }
 #backgImg{
-         background-image: url("../img/powitanie.JPG");
+        background-image: url("../img/powitanie.JPG");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -25,7 +20,7 @@ body
         background-image: radial-gradient(ellipse closest-corner at center, #757A62 0%, #1E1F04 100%);
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
+	/*background-attachment: fixed;*/
 }
 section{
     height: 100%;
@@ -34,22 +29,9 @@ h1, h2, figure{
     margin: 0px;
     padding: 0px;
 }
-/*#mainPage{
-    background-image: url("../img/powitanie.JPG");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    
-}*/
 #lessPage{
     position: relative;
-/*background-image: linear-gradient(to top, #A89F72 0%, #60BF4D 100%);*/
 }
-/*#tlo{
-    height: 100vh;
-    background-color: rgb(0,0,0);
-    opacity:0.4;
-}*/
 #button
 {
 	display: table;
@@ -58,6 +40,9 @@ h1, h2, figure{
 	position: absolute; 
         transform: translate(-50%,0%);
 }
+/*#button{
+    transform: translateX(-1000px);
+}*/
 #button a:hover
 {
 	cursor: pointer;
@@ -66,7 +51,7 @@ h1, h2, figure{
         color: white;
 }
 #button a{
-	box-shadow: 0px 4px 0px 0px white;
+	box-shadow: 1px 3px 0px 0px #c23d2e;
 	background:linear-gradient(to bottom, rgb(76,76,76) 0%, rgb(89,89,89) 12%, rgb(102,102,102) 25%, rgb(71,71,71) 39%, 
 	rgb(44,44,44) 50%, rgb(0,0,0) 51%, rgb(82,82,82) 60%, rgb(74,73,74) 76%, rgb(28,28,28) 91%, rgb(19,19,19) 100%);
 	border-radius:1rem;
@@ -84,33 +69,44 @@ h1, h2, figure{
 #button a:active
 {
 	position: relative;
-	bottom: -2px;
-        box-shadow: 0px 1px 0px 0px white;
+	bottom: -3px;
+        box-shadow: 0px 2px 0px 0px grey;
 }
-
+.buttonMove{
+    animation: buttonRun 3s 1 linear;
+    /*animation-delay: 2s;*/
+}
+@keyframes buttonRun{
+    0%{
+        transform: translateX(-1000px);
+    }100%{
+        transform: translateX(0); 
+    }
+}
 #name, #surname ,#deepThink
 {
 	position: absolute;
 	display: block;
-        font-family: 'Indie Flower', cursive;
+        font-family: 'Dancing Script', cursive;
+       font-family: 'EB Garamond', serif;
        color: #c23d2e;
        text-shadow: 2px 2px rgb(2, 0, 0);
 }
 #name{
     top: 7%;
     left: 10%;
-    /*font-size: 2.5rem;*/
+    font-size: 2.5rem;
 }
 span.T{
     position: inherit;
     font-size: 6rem;
-    left: 46%;
-    top: -50%;
+    left: 41%;
+    top: -55%;
 }
 #surname{
-    top: 16.5%;
-    left: 52%;
-    font-size: 1.9rem;
+        font-size: 1.5rem;
+        top: 70%;
+        left: 72%;
 }
 #deepThink
 {
@@ -128,6 +124,18 @@ img#autorImg{
     opacity:0.9;
     filter: grayscale(35%) drop-shadow(2px -1px 1px white);
 }
+.textDown{
+    animation: spadajacyText 2s 1 linear;
+    /*animation-delay: 2s;*/
+}
+@keyframes spadajacyText{
+    0%{
+        transform: translateY(-1000px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 /*--------------------------------------------------------------------------------------*/
 #nawigacja{
     position: absolute;
@@ -141,7 +149,7 @@ img#autorImg{
 {
         font-size: 0.8rem;
 }
- #Menu ul                       /*zresetowanie ustawien na ul z odlegÅ‚osciami */
+ #Menu ul                       /*zresetowanie ustawien na ul z odleg³osciami */
 {
 	margin: 0px;
 	padding: 0px;
@@ -229,12 +237,41 @@ img#autorImg{
     top:50%;
     left:50%;
     transform: translate(-52%,-45%);
+    overflow: scroll;
+    
 }
 #opis p{
     font-size: .4rem;
     font-family: 'Monda', sans-serif;
 }
-
+#opis h3{
+    font-size: .6rem;
+}
+#dodadki{
+    position: absolute;
+    border: 2px solid black;
+    width: 20%;
+    height: 70%;
+    right: 0;
+    z-index: 1;
+    top:110%;
+    background-color: brown;
+    font-size: 0.5rem;
+    
+    /*transition-duration: 5s;*/
+}
+#wigL{
+    position: absolute;
+    top:50%;
+    z-index: 1;
+    visibility: visible;
+}
+#wigR{
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    visibility: hidden;
+}
 /*Kostka3D----------------------------------------------------------------------------------------------*/
 #scena
 {
@@ -458,7 +495,8 @@ canvas{
 
 .kontenerImg{ 
    height: 120px;
-   padding: 2%;
+   width: 120px;
+   padding: 3% 4% 2% 4% ;
    position: relative;
    opacity: 0.8;
 }
@@ -472,12 +510,12 @@ canvas{
 }
 h6{
     position: absolute;
-    bottom:6%;
-    left:50%;
+    bottom:7%;
+    /*left:50%;*/
     color:white;
-    transform: translate(-50%,0%);
+    /*transform: translate(-50%,0%);*/
     margin-top: 10%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
     
 }
 /*--------------------------------------------------------------------*/
@@ -487,36 +525,25 @@ h6{
         top:45%;
     }
     img#autorImg{
-        bottom: 20%;
-        left: 42%;
-        height: 50%;
+        bottom: 19%;
+        left: 44%;
+        height: 47%;
      }
      #nawigacja{
        justify-content: flex-start;
        left :5%;
      }
     #button a{
-        padding:0.4rem 1rem;
+        padding:0.3rem 1rem;
     }
-    #button{
-        bottom: 7%;
-    } 
-    #name{
-         font-size: 2.5rem;
-    }
-    span.T{
-        font-size: 6rem;
-    }
-    #surname{
-        font-size: 1.5rem;
-        top: 65%;
-        left: 72%;
-    }
+/*    #button{
+        bottom: 5%;
+    } */
     #deepThink
     {
         font-size: 0.8rem;
         top:32%;
-        left:27%;
+        left:32%;
     }
 /*    #Menu_rozwijane{
         top:10%;
@@ -592,6 +619,9 @@ h6{
         animation: imgMoveLS 4s 1 alternate;
         z-index:1;
     }
+    #obiektyImg{
+        padding-left: 10%;
+    }
     
 }
 
@@ -599,8 +629,6 @@ h6{
 @media (orientation: portrait ){
     canvas{
         height: 60%;
-        //top:45%;
-       // left: 20%;
     }
     img#autorImg{
         bottom: 24%;
@@ -610,25 +638,26 @@ h6{
     #button a{
         padding:0.5rem 1.5rem;
     }
-    #button{
-      bottom: 10%;
-    }
+/*    #button{
+      bottom: 5%;
+    }*/
     #name{
          top: 10%;
-         font-size: 2.5rem;
     }
     span.T{
-        font-size: 6rem;
+        font-size: 5.5rem;
+        left: 43%;
+        top: -50%;
     }
     #surname{
-        top: 60%;
-        left: 72%;
-        font-size: 1.8rem;
+        top: 75%;
+        left: 75%;
+        font-size: 1.6rem;
     }
     #deepThink
     {
         font-size: 1rem;
-        top:25%;
+        top:26%;
         left:18%;
     }
 /*    #Menu_rozwijane{
@@ -711,33 +740,43 @@ h6{
         animation: imgMoveP 4s 1 alternate;
         z-index:1;
     }
-    
+    #obiektyImg{
+        padding-top: 15%;
+    }
+    .kontenerImg{
+        padding: 4% 6% 0% 6% ;
+    }
+    h6{
+        bottom: 0;
+    }
 }
 
 @media (orientation: portrait)and (min-width: 768px){
     img#autorImg{
-        bottom: 20%;
-        height: 44%;
-        left:35%;
+        bottom: 21%;
+        height: 50%;
+        left:34%;
         border-radius: 8rem;
     }
    #name{
          font-size: 4.5rem; 
+         /*top: 7%;*/
+         left: 7%;
    }
    span.T{
         font-size: 10rem;    
-        left: 48%;
+        left: 42%;
    }
    #surname{
-        font-size: 2.8rem;
-        top: 18%;
-        left: 46%;
+        font-size: 2.5rem;
+        top: 70%;
+        left: 72%;
     }
     #deepThink
     {
     font-size: 1.5rem;
     top:25%;
-    left:25%;
+    left:18%;
     }
    #Menu > li > a{
         padding: 0.7rem 2rem;
@@ -815,12 +854,18 @@ h6{
         height: 14rem;
     }
    .kontenerImg{ 
-        height: 200px;
-        padding: 4%;
+        height: 160px;
+        width: 160px;
+        padding: 8%;
        /* position: relative;
         opacity: 0.7;*/
     }
-
+    #obiektyImg{
+        padding: 10%;
+    }
+    h6{
+        bottom: 16.5%;
+    }
 }
 
 @media (orientation: landscape) and (min-width: 768px){
@@ -930,35 +975,38 @@ h6{
         animation: imgMoveLS768 4s 1 alternate;
         z-index:1;
     }
-    .kontenerImg{ 
-   height: 200px;
+/*    .kontenerImg{ 
+   height: 140px;
    padding: 4%;
-  /* position: relative;
-   opacity: 0.7;*/
-    }
+   position: relative;
+   opacity: 0.7;
+    }*/
 }
 
 
 @media screen and (min-width: 1024px){
     img#autorImg{
         bottom: 19%;
-        height: 55%;
+        height: 50%;
+        border-radius: 10rem;
     }
    #name{
-         font-size: 4rem; 
+         font-size: 6rem; 
+         top:5%
    }
    span.T{
-        font-size: 9rem;    
-        left: 48%;
+        font-size: 12rem;    
+        left: 44%;
+        top: -40%;
    }
    #surname{
-        font-size: 2.2rem;
-        top: 62%;
+        font-size: 3rem;
+        top: 70%;
         left: 73%;
     }
     #deepThink
     {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     top:30%;
     left:32%;
     }
@@ -1045,11 +1093,25 @@ h6{
         animation: imgMoveHV1024 4s 1 alternate;
         z-index:1;
     }
+    .kontenerImg{ 
+        height: 180px;
+        width: 180px;
+        padding: 4%;
+/*        position: relative;
+        opacity: 0.7;*/
+    }
+    h6{
+        bottom: 13.5%;
+    }
+    #button a{
+        font-size: 1rem;
+    }
 }
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1280px){
     img#autorImg{
-        bottom: 17%;
-        border-radius: 10rem;
+        /*height: 50%;*/
+        bottom: 23%;
+        /*border-radius: 10rem;*/
     }
      .obrazki_z_kostki3D{
         width: 30rem;
@@ -1065,8 +1127,27 @@ h6{
     #opis p{
         font-size: .8rem;
     }
+    h6{
+        bottom: 15.5%
+    }
+    
 }
-
+@media screen and (min-width: 1360px){
+     img#autorImg{
+        height: 60%;
+        bottom: 15%;
+        /*border-radius: 10rem;*/
+    }
+    #deepThink
+    {
+    /*font-size: 1.5rem;*/
+    top:35%;
+    /*left:32%;*/
+    }
+    h6{
+        bottom: 16%;
+    }
+}
 @keyframes imgMoveP{
     0%{
        opacity: 0.2;
