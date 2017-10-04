@@ -1,0 +1,2 @@
+04.10
+Poprawka w index ruch widgeta, dodano animacje nowego napisu w Slajd, minimalizacja kodu Slajd.js, poprawki na RWD do strony Slajd
