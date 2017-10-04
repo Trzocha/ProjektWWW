@@ -1,37 +1,28 @@
 $("document").ready(
         function (){
+            $("#dodadki").css("width","0");
+            
             $("#wigL").click(
-                    function (){
-                      
-                          $("#dodadki").animate({transform: 50},{
-                              step:function(now,fx){
-//                                  $(this).css("transition-duration","3s");
-                                  $(this).css("transform","translateX("+now+"px)");
-//                                  $(this).css("transform-duration","5s");
-                                  $("#wigL").css("visibility","hidden")
-                                      .css("z-index","0");
-                                  $("#wigR").css("visibility","visible")
-                                      .css("z-index","1");
-                              }});
-                    }
-           ); 
+                function() {
+                    $("#wigL").css("display","none");
+                    $("#dodadki").animate({
+                       width: 0
+                    },1000,function (){
+                        $("#wigR").css("display","block");
+                    });
+                }
+            );
+            $("#wigR").click(
+                function() {
+                    $("#wigR").css("display","none");
+                    $("#dodadki").animate({
+                       width: '20%' 
+                    },1000,function (){
+                        $("#wigL").css("display","block");
+                    });
+                }
+            );
 
-           $("#wigR").click(
-                    function(){
-                        $("#dodadki").animate({transform: 0},{
-                            step:function(now,fx){
-//                                $(this).css("transition-duration","3s");
-                              $(this).css("transform","translateX("+now+"px)");
-                              $("#wigL").css("visibility","visible")
-                                      .css("z-index","1");
-                              $("#wigR").css("visibility","hidden")
-                                      .css("z-index","0");
-         
-                          
-                              }
-                        });
-                    }
-           );
 
 // -------------------------------------------------------------           
             $("#name,#deepThink").css("opacity","0");
