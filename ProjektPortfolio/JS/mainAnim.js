@@ -1,11 +1,15 @@
 $("document").ready(
         function (){
-            $("#dodadki").css("width","0");
+//           alert(screen.width);
+//           alert(screen.height);
+//            $("#opis p").
+//   -----------------------------------------------------------
+            $("#accessory").css("width","0");         //widzet
             
             $("#wigL").click(
                 function() {
                     $("#wigL").css("display","none");
-                    $("#dodadki").animate({
+                    $("#accessory").animate({
                        width: 0
                     },1000,function (){
                         $("#wigR").css("display","block");
@@ -15,7 +19,7 @@ $("document").ready(
             $("#wigR").click(
                 function() {
                     $("#wigR").css("display","none");
-                    $("#dodadki").animate({
+                    $("#accessory").animate({
                        width: '20%' 
                     },1000,function (){
                         $("#wigL").css("display","block");
@@ -23,38 +27,70 @@ $("document").ready(
                 }
             );
 
-
 // -------------------------------------------------------------           
-            $("#name,#deepThink").css("opacity","0");
-            $("#autorImg").animate({
+            $("#name,#deepThink").css("opacity","0");    //animacja spadajacego tekstu i pojawiajacego sie buttona
+            $("#buttonMainPage a").css("display","none");
+            $("#authorImg").animate({
                 opacity:0
             },10,function(){
-                $("#name, #button").removeAttr("style");
-               $("#button").addClass("buttonMove");
-                $("#name").addClass("textDown");
-                
-                
-                
-                 $("#autorImg").animate({
+                 $("#authorImg").animate({
                      opacity:1
-                 },3000,function (){
-                     $("#deepThink").removeAttr("style");
-                     $("#deepThink").addClass("textDown");
-                  
-                      $("#button a")
-                       .animate({},0,function (){
-                           $("#button a").animate({
-                               'font-size': '1.2rem'
-                           },1000,function (){
-                               $("#button a").animate({
-                                  'font-size': '0.8rem' 
-                               },1000);
-                               });
-                           });
+                 },2000,function (){
+                     $("#name").removeAttr("style")
+                             .addClass("textDown");
+                     setTimeout(
+                            function (){
+                                $("#deepThink").removeAttr("style")
+                             .addClass("textDown");
+                            },1000    
+                         );
+                      setTimeout(
+                            function (){
+                               $("#buttonMainPage a").slideDown(1500);
+                            },2200    
+                         );
                        }); 
                  });
            //     --------------------------------------------------------------           
-            
+           var kontakt = false;
+           $("#Menu >li:last-child>a").click(      //animacja wczytywania nowej tresci
+                    function (){
+                        if(!kontakt){
+//                            alert("klikam");
+                            $("#description p, #description h3").animate({
+                                opacity: 0
+                            },2000,function (){
+                                $("#description").css("display","none");
+                                $("#contact").css("display","block");
+                                $("#contact h4, #contact p").animate({
+                                    opacity:1
+                                },1500);     
+                            });
+                            kontakt = true;
+                        }
+                    });
+           $("#Menu >li:first-child>a").click(
+                function (){
+                   if(kontakt){
+//                      alert("Odwracam");
+                      $("#contact h4, #contact p").animate({
+                         opacity:0
+                      },1000,function (){
+                          $("#contact").css("display","none");
+                           $("#description").css("display","block");
+                            $("#description p, #description h3").animate({
+                                opacity:1
+                            },500);
+                      }); 
+                      kontakt = false;
+                   }   
+                });
+          
+                $("#Menu > li:eq(1)>a").click(
+                    function (){
+                        alert("Projekt");
+                    }    
+                    );
         }
 );
     

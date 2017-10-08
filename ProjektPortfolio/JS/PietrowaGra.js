@@ -18,7 +18,39 @@ Game={
             Game.enemy[i] = new Enemy(VARGLOB.lvl);
             Game.enemy[i].pos_y = (Game.hf+Game.hw)*i+2;
         }
-  
+        
+        Game.prawo.click(
+            function (){
+               if(Game.pg_x<=(VARGLOB.cw-Game.wg-5)) //przesuwanie gracza w prawo wraz z ograniczeniem na szerokosc
+                  Game.pg_x+=5;
+        });
+        
+        Game.lewo.click(
+            function (){
+                if(Game.pg_x>=5)               //przesuwanie gracza w lewo wraz z ograniczeniem na szerokosc
+                    Game.pg_x-=5;     
+        });
+        
+        Game.gora.click(
+           function (){
+              if(Game.pg_y>=2*Game.hf+Game.hw+2){
+                 Game.pg_y-=(Game.hf+Game.hw);
+                 VARGLOB.point+=1;
+                 if(VARGLOB.point%14 == 0){  //dotarcie na sam szczyt
+                    VARGLOB.lvl+=1;
+                    Game.init();
+                 }  
+             }
+        });
+        
+        Game.dol.click(
+           function (){
+             if(Game.pg_y<=VARGLOB.ch-2*Game.hg){
+                Game.pg_y+=(Game.hf+Game.hw);
+                VARGLOB.point-=1;
+            }   
+        });
+        
         Game.animationLoop();
 
     },
@@ -36,6 +68,11 @@ Game={
         Game.lastConTime = 0;  //czas pomocniczy aby mierzyc czas w grze
         Game.loop = false;      //zmienna pomocnicza do manipulowaniem nasluchiwacza requestAnimationFrame (uzywana w fun drawEnemy)
         Game.t = true;          //j.w
+        Game.prawo = $("#prawo");
+        Game.lewo = $("#lewo");
+        Game.gora = $("#gora");
+        Game.dol = $("#dol");
+        
     },
     animationLoop:function(time){
         if(!Game.loop)                                  

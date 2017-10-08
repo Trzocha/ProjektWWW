@@ -32,7 +32,8 @@ h1, h2, figure{
 #lessPage{
     position: relative;
 }
-#button
+
+.button
 {
 	display: table;
 	bottom: 10%;
@@ -40,17 +41,14 @@ h1, h2, figure{
 	position: absolute; 
         transform: translate(-50%,0%);
 }
-/*#button{
-    transform: translateX(-1000px);
-}*/
-#button a:hover
+.button a:hover
 {
 	cursor: pointer;
 	opacity: 1;
 	transition: 0.5s;
         color: white;
 }
-#button a{
+.button a{
 	box-shadow: 1px 3px 0px 0px #c23d2e;
 	background:linear-gradient(to bottom, rgb(76,76,76) 0%, rgb(89,89,89) 12%, rgb(102,102,102) 25%, rgb(71,71,71) 39%, 
 	rgb(44,44,44) 50%, rgb(0,0,0) 51%, rgb(82,82,82) 60%, rgb(74,73,74) 76%, rgb(28,28,28) 91%, rgb(19,19,19) 100%);
@@ -66,23 +64,15 @@ h1, h2, figure{
 	text-shadow: 0px 1px 0px #e1e2ed;
 	opacity: 0.7;
 }
-#button a:active
+.button a:active
 {
 	position: relative;
 	bottom: -3px;
         box-shadow: 0px 2px 0px 0px grey;
 }
-.buttonMove{
-    animation: buttonRun 3s 1 linear;
-    /*animation-delay: 2s;*/
-}
-@keyframes buttonRun{
-    0%{
-        transform: translateX(-1000px);
-    }100%{
-        transform: translateX(0); 
+#buttonPage{
+        display: none;
     }
-}
 #name, #surname ,#deepThink
 {
 	position: absolute;
@@ -116,7 +106,7 @@ span.T{
     top:25%;
     left:15%;
 }
-img#autorImg{
+img#authorImg{
     position: absolute;
     border-radius: 4rem;
     bottom: 24%;
@@ -125,7 +115,7 @@ img#autorImg{
     filter: grayscale(35%) drop-shadow(2px -1px 1px white);
 }
 .textDown{
-    animation: spadajacyText 2s 1 linear;
+    animation: spadajacyText 1s 1 linear;
     /*animation-delay: 2s;*/
 }
 @keyframes spadajacyText{
@@ -137,15 +127,16 @@ img#autorImg{
     }
 }
 /*--------------------------------------------------------------------------------------*/
-#nawigacja{
+#navigation{
     position: absolute;
     display: flex;
-    justify-content: center;
+    align-content: flex-start;
     top: 10%;
+    left:5%;
     width: 90%;
 }
 
-#Menu_rozwijane
+#Menu_unfold
 {
         font-size: 0.8rem;
 }
@@ -193,7 +184,7 @@ img#autorImg{
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
 }
-#nawigacja #Menu >li:last-child > a
+#navigation #Menu >li:last-child > a
 {
 	border-top-right-radius: 7px;
 	border-bottom-right-radius: 7px;
@@ -228,26 +219,44 @@ img#autorImg{
 	transition: 0.3s;
         z-index: 1;
 }
-#opis{
+#description,#contact,.project{
     position: absolute;
     height: 55%;
     width: 75%;
     background-color: #E3F5AB;
-    font-size: 0.5rem;
+    /*font-size: 0.5rem;*/
     top:50%;
     left:50%;
     transform: translate(-52%,-45%);
     overflow: scroll;
-    
+    display: block;
 }
-#opis p{
-    font-size: .4rem;
+#contact ,.project{
+    display: none;
+}
+#contact h4,#contact p{
+    opacity:0;
+}
+#description p{
+    margin: 0.5rem 1rem 0 0;
+    font-size: .65rem;
     font-family: 'Monda', sans-serif;
+    text-align: justify;
 }
-#opis h3{
-    font-size: .6rem;
+#description h3{
+    margin:0;
+    font-size: 1rem;
 }
-#dodadki{
+b i{
+    font-size: 0.75rem;
+}
+#description p a{
+    color:blue;
+}
+#description p a:hover{
+    cursor: pointer;
+}
+#accessory{
     position: absolute;
     border: 2px solid black;
     width: 20%;
@@ -255,25 +264,22 @@ img#autorImg{
     right: 0;
     z-index: 1;
     top:110%;
-    background-color: brown;
     font-size: 0.5rem;
-    
-    /*transition-duration: 5s;*/
+}
+#zawartosc{
+   height: 100%;
+   background-color: black; 
+   opacity:0.4;
 }
 #wigL{
     position: absolute;
     top:50%;
-    /*z-index: 1;*/
-    /*visibility: visible;*/
     display: none;
 }
 #wigR{
     position: absolute;
     right: 0;
     top: 50%;
-    /*z-index: 0;*/
-    /*visibility: hidden;*/
-    /*display: none;*/
 }
 /*Kostka3D----------------------------------------------------------------------------------------------*/
 #scena
@@ -456,26 +462,43 @@ canvas{
     left:50%;
     transform: translate(-50%,-50%);
 }
+#controlPanel{
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    /*transform: translateY(210%);*/
+    bottom:0%;
+   
+}
 #controlPanel img{
     position: absolute;
-
+}
+#prawo,#lewo,#gora,#dol,#enter,#back{
+    height: 30%;
+    transform: translate(50%,-50%);
 }
 #prawo{
-   top:50%;
    left:20%;
 }
 #lewo{
-   top:50%;
-   left:5%;
+   left:10%;
 }
 #gora{
-   top: 40%;
-   right :15%;
+   right:20%;
 }
 #dol{
-   top:60%;
-   right :15%;
+   top:50%;
+   right:20%;
 }
+#enter{
+    top: 65%;
+}
+#back{
+    top:65%;
+    left:20%;
+    
+}
+
 /*------------------------------------Slajder--------------------*/
 #viewImg{
     background-color: #1f3b08;
@@ -514,9 +537,7 @@ canvas{
 h6{
     position: absolute;
     bottom:7%;
-    /*left:50%;*/
     color:white;
-    /*transform: translate(-50%,0%);*/
     margin-top: 10%;
     background-color: rgba(0,0,0,0.4);
     
@@ -525,19 +546,12 @@ h6{
     position: absolute;
     padding: 1rem 0 0 0;
     margin: 0;
-/*    left:50%;
-    top: -20px;
-    transform: translate(-45%,0%);*/
-    color: white;
-    /*display: none;*/
-    
+    color: white;   
 }
 #Slajder span{
     font-size: 2rem;
     font-family: 'Nosifer', cursive;
-    position: absolute;
-    /*transform: translateY(0);*/
-    
+    position: absolute; 
 }
 #Slajder p{
     margin: 0;
@@ -566,32 +580,29 @@ h6{
 @media (orientation: landscape){
     canvas{
         height: 70%;
-        top:45%;
+        top:40%;
     }
-    img#autorImg{
-        bottom: 19%;
-        left: 44%;
+    img#authorImg{
+        bottom: 22%;
+        left: 42%;
         height: 47%;
      }
-     #nawigacja{
+/*     #navigation{
        justify-content: flex-start;
        left :5%;
-     }
-    #button a{
+     }*/
+    .button a{
         padding:0.3rem 1rem;
     }
-/*    #button{
+    .button{
         bottom: 5%;
-    } */
+    } 
     #deepThink
     {
         font-size: 0.8rem;
         top:32%;
         left:32%;
     }
-/*    #Menu_rozwijane{
-        top:10%;
-    }*/
     #scena{
 	width: 5rem;
 	height: 5rem;
@@ -674,17 +685,49 @@ h6{
     canvas{
         height: 60%;
     }
-    img#autorImg{
+    #controlPanel{
+        height: 9rem;
+    }
+    #prawo,#lewo,#gora,#dol,#enter,#back{
+    height: 20%;
+    transform: translate(50%,-50%);
+    }
+    #prawo{
+       top:25%;
+       left:56%;
+    }
+    #lewo{
+       top:25%;
+       left:25%;
+    }
+    #gora{
+       top: 5%;
+       right :50%;
+    }
+    #dol{
+       top:45%;
+       right :50%;
+    }
+    #enter{
+        left:3%;
+        top: 65%;
+    }
+    #back{
+        top:65%;
+        left:65%;
+    }
+/*-----------------------------------------------*/
+    img#authorImg{
         bottom: 24%;
         left: 30%;
         height: 45%;
     }
-    #button a{
+    .button a{
         padding:0.5rem 1.5rem;
     }
-/*    #button{
+    .button{
       bottom: 5%;
-    }*/
+    }
     #name{
          top: 10%;
     }
@@ -704,11 +747,12 @@ h6{
         top:26%;
         left:18%;
     }
-/*    #Menu_rozwijane{
-        top: 10%;
-        //transform: translate(7%,0%);
-    }*/
-    #opis{
+    #navigation{
+        justify-content: center;
+        width: 100%;
+        left:0;
+    }
+    #description,#contact{
         height: 60%;
         transform: translate(-50%,-50%);
     }
@@ -796,7 +840,7 @@ h6{
 }
 
 @media (orientation: portrait)and (min-width: 768px){
-    img#autorImg{
+    img#authorImg{
         bottom: 21%;
         height: 50%;
         left:34%;
@@ -825,13 +869,22 @@ h6{
    #Menu > li > a{
         padding: 0.7rem 2rem;
     }
-    #Menu_rozwijane{
+    #Menu_unfold{
         font-size: 1.2rem;
     }
      #Menu >li ul li a{
 	padding-top: 0.7rem;
 	padding-bottom: 0.7rem;
 	font-size: 1rem;
+    }
+    #description p{
+        font-size: 1.1rem;
+    }
+    #description h3{
+        font-size: 1.5rem;
+    }
+    b i{
+        font-size: 1.3rem;
     }
     #scena{
 	width: 8rem;
@@ -865,11 +918,9 @@ h6{
          height: 2.2rem;
     }
     .butt0 /*prawy*/{
-/*        top:35%;*/
         left: 20%;
     }
     .butt1 /*lewy*/{
-/*        top:35%;*/
         left: 8%;
     }
     .butt2 /*dol*/{
@@ -901,8 +952,6 @@ h6{
         height: 160px;
         width: 160px;
         padding: 8%;
-       /* position: relative;
-        opacity: 0.7;*/
     }
     #obiektyImg{
         padding: 15%;
@@ -917,10 +966,16 @@ h6{
        
         font-size: 4.5rem;
     }
+    #controlPanel{
+        height: 15rem;
+    }
+    #prawo{
+       left:60%;
+    }
 }
 
 @media (orientation: landscape) and (min-width: 768px){
-    img#autorImg{
+    img#authorImg{
         bottom: 24%;
         height: 45%;
     }
@@ -946,7 +1001,7 @@ h6{
    #Menu > li > a{
         padding: 0.7rem 2rem;
     }
-    #Menu_rozwijane{
+    #Menu_unfold{
         font-size: 1rem;
     }
     #Menu >li ul li a{
@@ -1026,22 +1081,39 @@ h6{
         animation: imgMoveLS768 4s 1 alternate;
         z-index:1;
     }
-/*    .kontenerImg{ 
-   height: 140px;
-   padding: 4%;
-   position: relative;
-   opacity: 0.7;
-    }*/
     
     #Slajder p{
             width: 200px;
             font-size: 3rem;
         }
+        #controlPanel{
+            height: 15rem;
+    }
+    #prawo,#lewo,#gora,#dol,#enter,#back{
+        height: 15%;
+    }
+    #prawo{
+       top:25%;
+       left:20%;
+    }
+    #lewo{
+       top:25%;
+       left:5%;
+    }
+    #enter{
+        left:30%;
+        top: 80%;
+    }
+    #back{
+        top:80%;
+        left:47%;
+
+    }
 }
 
 
 @media screen and (min-width: 1024px){
-    img#autorImg{
+    img#authorImg{
         bottom: 19%;
         height: 50%;
         border-radius: 10rem;
@@ -1069,13 +1141,22 @@ h6{
    #Menu > li > a{
         padding: 0.7rem 2rem;
     }
-    #Menu_rozwijane{
+    #Menu_unfold{
         font-size: 1.2rem;
     }
     #Menu >li ul li a{
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	font-size: 1rem;
+    }
+     #description p{
+        font-size: 1.1rem;
+    }
+    #description h3{
+        font-size: 1.6rem;
+    }
+    b i{
+        font-size: 1.3rem;
     }
     #scena{
 	width: 10rem;
@@ -1153,13 +1234,11 @@ h6{
         height: 180px;
         width: 180px;
         padding: 4.5%;
-/*        position: relative;
-        opacity: 0.7;*/
     }
     h6{
         bottom: 14.5%;
     }
-    #button a{
+    .button a{
         font-size: 1rem;
     }
     #Slajder{
@@ -1168,12 +1247,30 @@ h6{
     #Slajder p{
         font-size: 4rem;
     }
+     #controlPanel{
+        height: 20rem;
+    }
+    #prawo,#lewo,#gora,#dol,#enter,#back{
+        height: 15%;
+    }
+    #prawo{
+       top:25%;
+    }
+    #lewo{
+       top:25%;
+       left:5%;
+    }
+    #enter,#back{
+        left:30%;
+        top: 80%;
+    }
+    #back{
+        left:47%;
+    }
 }
 @media screen and (min-width: 1280px){
-    img#autorImg{
-        /*height: 50%;*/
+    img#authorImg{
         bottom: 23%;
-        /*border-radius: 10rem;*/
     }
      .obrazki_z_kostki3D{
         width: 30rem;
@@ -1186,8 +1283,11 @@ h6{
         animation: imgMoveHV 4s 1 alternate;
         z-index:1;
     }
-    #opis p{
-        font-size: .8rem;
+    #description h3{
+        font-size: 1.8rem;
+    }
+    b i{
+        font-size: 1.2rem;
     }
     h6{
         bottom: 20.5%
@@ -1201,19 +1301,21 @@ h6{
     #Slajder p {
         width: 300px;
     }
+    #controlPanel{
+        display: none;
+    }
+    #buttonPage{
+        display: block;
+    }
     
 }
 @media screen and (min-width: 1360px){
-     img#autorImg{
+     img#authorImg{
         height: 60%;
         bottom: 15%;
-        /*border-radius: 10rem;*/
     }
-    #deepThink
-    {
-    /*font-size: 1.5rem;*/
+    #deepThink{
     top:35%;
-    /*left:32%;*/
     }
     h6{
         bottom: 0%;
@@ -1222,7 +1324,7 @@ h6{
         padding: 8% 8% 0 8%;
     }
     #Slajder{
-        padding-top: 4rem;
+        padding-top: 3rem;
     }
     #Slajder p{
         width: 300px;

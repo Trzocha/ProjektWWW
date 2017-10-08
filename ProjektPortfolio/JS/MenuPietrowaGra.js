@@ -27,7 +27,9 @@ Menu = {
         Menu.canvas = document.createElement('canvas');
         Menu.ctx = Menu.canvas.getContext('2d');
         document.body.appendChild(Menu.canvas);
-        Menu.prawo = $("#prawo");
+        Menu.gora = $("#gora");
+        Menu.dol = $("#dol");
+        Menu.enter = $("#enter");
         
         Menu.menuGo();
         
@@ -36,6 +38,24 @@ Menu = {
         Menu.layout();   //ustawienia
         
         window.addEventListener('keydown',Menu.move,false);
+        
+         Menu.dol.click(
+                function (){
+                    if(Menu.positionImg[0].pos_y<250)
+                        Menu.positionImg[0].pos_y+=100;
+                     console.log(Menu.positionImg[0].pos_y);
+        });
+        Menu.gora.click(
+           function (){
+               if(Menu.positionImg[0].pos_y>50)
+                    Menu.positionImg[0].pos_y-=100;
+               console.log(Menu.positionImg[0].pos_y);
+           }
+        );
+
+        Menu.enter.click(
+                function (){Menu.loop = true;});
+        
         Menu.animationLoop();
     },
     layout:function (){
@@ -46,6 +66,9 @@ Menu = {
         Menu.max_pos_y = 50;    //ograniczenie pozycji ruchu strzalki od gory
         Menu.loop = false;
         Menu.lastTime = 0;
+//                            //obsluga przycisków na mobile
+//        Menu.goraB = true;
+//        Menu.dolB = true;
         
         Menu.positionImg=[{pos_x:10,pos_y:50},{pos_x:120,pos_y:50},{pos_x:120,pos_y:150},{pos_x:120,pos_y:250}]; //startowa posycja wklejania obrazkow
         Menu.img = [];
@@ -83,12 +106,21 @@ Menu = {
             requestAnimationFrame(Menu.animationLoop);  //nasluchiwacz, wywoluje sie po auto odswiezaniu strony
         else Game.init();
         
-        Menu.prawo.click(
-                function (){
-                     Menu.positionImg[0].pos_y+=100;
-                     console.log(Menu.positionImg[0].pos_y);
-                }
-                );
+        
+        
+//        Menu.dol.mousedown(
+//                function (){
+//                    if(Menu.dolB){
+//                     Menu.positionImg[0].pos_y+=100;
+//                     console.log(Menu.positionImg[0].pos_y);
+//                     Menu.dolB = false;
+//                    }    
+//                });
+//        Menu.dol.mouseup(
+//            function(){
+//                 Menu.dolB = true;   
+//            }
+//        );
         
         if(time-Menu.lastTime>=1000/VARGLOB.fpsM){
            // console.log(time-Menu.lastTime);
