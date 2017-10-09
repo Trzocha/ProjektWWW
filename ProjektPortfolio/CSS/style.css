@@ -219,12 +219,19 @@ img#authorImg{
 	transition: 0.3s;
         z-index: 1;
 }
+
+#authorInfo{
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 0.5rem;
+}
 #description,#contact,.project{
     position: absolute;
     height: 55%;
     width: 75%;
     background-color: #E3F5AB;
-    /*font-size: 0.5rem;*/
     top:50%;
     left:50%;
     transform: translate(-52%,-45%);
@@ -237,24 +244,30 @@ img#authorImg{
 #contact h4,#contact p{
     opacity:0;
 }
-#description p{
+#description p, .project p{
     margin: 0.5rem 1rem 0 0;
     font-size: .65rem;
     font-family: 'Monda', sans-serif;
     text-align: justify;
 }
+
 #description h3{
     margin:0;
     font-size: 1rem;
 }
-b i{
-    font-size: 0.75rem;
+b em{
+    font-size: 0.7rem;
 }
 #description p a{
     color:blue;
 }
 #description p a:hover{
     cursor: pointer;
+}
+.workTarget li{
+    margin-top: 0;
+    font-family: 'Monda', sans-serif;
+    font-size: .65rem;
 }
 #accessory{
     position: absolute;
@@ -752,7 +765,7 @@ h6{
         width: 100%;
         left:0;
     }
-    #description,#contact{
+    #description,#contact,.project{
         height: 60%;
         transform: translate(-50%,-50%);
     }
@@ -877,13 +890,13 @@ h6{
 	padding-bottom: 0.7rem;
 	font-size: 1rem;
     }
-    #description p{
+    #description p,.project p,.workTarget li{
         font-size: 1.1rem;
     }
     #description h3{
         font-size: 1.5rem;
     }
-    b i{
+    b em{
         font-size: 1.3rem;
     }
     #scena{
@@ -1149,13 +1162,13 @@ h6{
 	padding-bottom: 0.5rem;
 	font-size: 1rem;
     }
-     #description p{
+     #description p, .project p,.workTarget li{
         font-size: 1.1rem;
     }
     #description h3{
         font-size: 1.6rem;
     }
-    b i{
+    b em{
         font-size: 1.3rem;
     }
     #scena{
@@ -1286,7 +1299,7 @@ h6{
     #description h3{
         font-size: 1.8rem;
     }
-    b i{
+    b em{
         font-size: 1.2rem;
     }
     h6{

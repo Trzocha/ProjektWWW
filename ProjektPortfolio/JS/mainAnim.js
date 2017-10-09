@@ -52,28 +52,50 @@ $("document").ready(
                        }); 
                  });
            //     --------------------------------------------------------------           
-           var kontakt = false;
+           
+           var position = "descrip" ;
            $("#Menu >li:last-child>a").click(      //animacja wczytywania nowej tresci
                     function (){
-                        if(!kontakt){
-//                            alert("klikam");
-                            $("#description p, #description h3").animate({
+                        if(position === "descrip"){        //o mnie
+                            showContAfterDescrip();
+                        }else if(position === "proj"){
+                            showContAfterProjec();
+                        }
+                         position = "contact";
+                    });
+           $("#Menu >li:first-child>a").click(
+                function (){
+                    if(position === "contact")
+                            showDescripAfterCont();
+                    else if(position === "proj")
+                            showDescripAfterProjec();
+                    position = "descrip";
+                });
+          
+                $("#Menu > li:eq(1)>a").click(
+                    function (){
+                       if(position === "descrip")
+                            showProjAfterDescrip();
+                        else if(position === "contact")
+                            showProjAfterCont();
+                    position = "proj";
+                           
+                });
+        }
+);
+function showContAfterDescrip(){
+    $("#description p, #description h3").animate({
                                 opacity: 0
-                            },2000,function (){
+                            },1000,function (){
                                 $("#description").css("display","none");
                                 $("#contact").css("display","block");
                                 $("#contact h4, #contact p").animate({
                                     opacity:1
-                                },1500);     
+                                },500);     
                             });
-                            kontakt = true;
-                        }
-                    });
-           $("#Menu >li:first-child>a").click(
-                function (){
-                   if(kontakt){
-//                      alert("Odwracam");
-                      $("#contact h4, #contact p").animate({
+}
+function showDescripAfterCont(){
+ $("#contact h4, #contact p").animate({
                          opacity:0
                       },1000,function (){
                           $("#contact").css("display","none");
@@ -81,17 +103,49 @@ $("document").ready(
                             $("#description p, #description h3").animate({
                                 opacity:1
                             },500);
-                      }); 
-                      kontakt = false;
-                   }   
-                });
-          
-                $("#Menu > li:eq(1)>a").click(
-                    function (){
-                        alert("Projekt");
-                    }    
-                    );
-        }
-);
-    
-
+                      });    
+}
+function showDescripAfterProjec(){
+    $(".project p").animate({
+                         opacity:0
+                      },1000,function (){
+                          $(".project").css("display","none");
+                           $("#description").css("display","block");
+                            $("#description p, #description h3").animate({
+                                opacity:1
+                            },500);
+                      });   
+}
+function showProjAfterDescrip(){
+    $("#description p, #description h3").animate({
+                         opacity:0
+                      },1000,function (){
+                          $("#description").css("display","none");
+                           $(".project").css("display","block");
+                            $(".project p").animate({
+                                opacity:1
+                            },500);
+                      });   
+}
+function showProjAfterCont(){
+    $("#contact h4, #contact p").animate({
+                         opacity:0
+                      },1000,function (){
+                          $("#contact").css("display","none");
+                           $(".project").css("display","block");
+                            $(".project p").animate({
+                                opacity:1
+                            },500);
+                      });   
+}
+function showContAfterProjec(){
+    $(".project p").animate({
+                         opacity:0
+                      },1000,function (){
+                          $(".project").css("display","none");
+                           $("#contact").css("display","block");
+                            $("#contact h4, #contact p").animate({
+                                opacity:1
+                            },500);
+                      });   
+}
