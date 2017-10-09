@@ -1,2 +1,4 @@
 04.10
-Poprawka w index ruch widgeta, dodano animacje nowego napisu w Slajd, minimalizacja kodu Slajd.js, poprawki na RWD do strony Slajd
+Poprawka w index ruch widgeta, dodano animacje nowego napisu w Slajd, minimalizacja kodu Slajd.js, poprawki na RWD do strony Slajdro
+09.10
+Poprawka w index wyglad widgeta, zmieniono animacje strony startowej, dodano do menu nową funkcjonalność, która animuje przejscie miedzy zakładkami, poprawiono w index semantyke kodu HTML, dodano funkcjonalnosc na urzadzeniach mobilnych GryJS 
