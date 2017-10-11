@@ -1,14 +1,12 @@
 html
 {
 	font-size: 20px;
-
 }
 body
 {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-
 }
 #backgImg{
         background-image: url("../img/powitanie.JPG");
@@ -32,7 +30,6 @@ h1, h2, figure{
 #lessPage{
     position: relative;
 }
-
 .button
 {
 	display: table;
@@ -81,11 +78,44 @@ h1, h2, figure{
        font-family: 'EB Garamond', serif;
        color: #c23d2e;
        text-shadow: 2px 2px rgb(2, 0, 0);
+       
 }
 #name{
     top: 7%;
     left: 10%;
     font-size: 2.5rem;
+}
+.rubber{
+    animation: rubberBand 2s 1 ease;
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }
 span.T{
     position: inherit;
@@ -116,7 +146,6 @@ img#authorImg{
 }
 .textDown{
     animation: spadajacyText 1s 1 linear;
-    /*animation-delay: 2s;*/
 }
 @keyframes spadajacyText{
     0%{
@@ -135,7 +164,6 @@ img#authorImg{
     left:5%;
     width: 90%;
 }
-
 #Menu_unfold
 {
         font-size: 0.8rem;
@@ -242,7 +270,16 @@ img#authorImg{
     display: none;
 }
 #contact h4,#contact p{
+    position: absolute;
     opacity:0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#contact h4{
+    top:30%;
+}
+#contact p{
+    top:50%;
 }
 #description p, .project p{
     margin: 0.5rem 1rem 0 0;
@@ -269,6 +306,27 @@ b em{
     font-family: 'Monda', sans-serif;
     font-size: .65rem;
 }
+.rollIn{
+    animation: rollIn 2s 1 ease;
+}
+@keyframes rollIn {
+	0% { opacity: 0; transform: translateX(-100%) rotate(-120deg); }
+	100% { opacity: 1; transform: translateX(0px) rotate(0deg); }
+}
+.rollOut{
+    animation: rollOut 2s 1 ease;
+}
+@keyframes rollOut {
+    0% {
+		opacity: 1;
+		transform: translateX(0px) rotate(0deg);
+	}
+
+    100% {
+		opacity: 0;
+		transform: translateX(100%) rotate(120deg);
+	}
+}
 #accessory{
     position: absolute;
     border: 2px solid black;
@@ -280,9 +338,10 @@ b em{
     font-size: 0.5rem;
 }
 #zawartosc{
+   display: flex;
+   justify-content: center;
    height: 100%;
-   background-color: black; 
-   opacity:0.4;
+   background-color: rgba(0,0,0,0.4); 
 }
 #wigL{
     position: absolute;
@@ -293,6 +352,53 @@ b em{
     position: absolute;
     right: 0;
     top: 50%;
+}
+#clock{
+    width: 100px;
+    height: 100px;
+    transform: rotate(180deg);
+    display: none;
+}
+#clock img{
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+#bigGuide{ 
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background-color: black;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,0%);
+    z-index: 1;
+    transform-origin: top center;
+    animation-duration: 3600s; 
+    
+}
+#smallGuide{     
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background-color: yellow;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,0%);
+    transform-origin: top center;
+    animation-duration: 43200s; 
+    
+}
+.clockMove{
+    animation-name: clockMove;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /*animation: clockMove 60s infinite linear;*/
+}
+@keyframes clockMove{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 /*Kostka3D----------------------------------------------------------------------------------------------*/
 #scena

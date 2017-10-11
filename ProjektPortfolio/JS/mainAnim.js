@@ -3,6 +3,9 @@ $("document").ready(
 //           alert(screen.width);
 //           alert(screen.height);
 //            $("#opis p").
+//            console.log($(".project").html().length);
+//            console.log($(".project").html());
+   
 //   -----------------------------------------------------------
             $("#accessory").css("width","0");         //widzet
             
@@ -12,6 +15,7 @@ $("document").ready(
                     $("#accessory").animate({
                        width: 0
                     },1000,function (){
+                        $("#clock").css("display","none");
                         $("#wigR").css("display","block");
                     });
                 }
@@ -19,6 +23,7 @@ $("document").ready(
             $("#wigR").click(
                 function() {
                     $("#wigR").css("display","none");
+                    $("#clock").css("display","block")
                     $("#accessory").animate({
                        width: '20%' 
                     },1000,function (){
@@ -26,6 +31,23 @@ $("document").ready(
                     });
                 }
             );
+//                                            poczatek zegara
+         $("#smallGuide, #bigGuide").addClass("clockMove");       
+                let minutes = document.querySelector("#bigGuide");
+                let hours = document.querySelector("#smallGuide");
+                now = new Date();
+                
+                let minu = now.getMinutes()*60 ;
+                let hour = now.getHours()*3600 ;
+                
+                let dayWeek = now.getDay();
+                let dayMonth = now.getDate();
+                let month = now.getMonth();
+                let year = now.getFullYear();
+                console.log(dayWeek,dayMonth,month,year);
+         
+                minutes.style.animationDelay = '-'+ minu+'s';
+                hours.style.animationDelay = '-'+hour+'s';
 
 // -------------------------------------------------------------           
             $("#name,#deepThink").css("opacity","0");    //animacja spadajacego tekstu i pojawiajacego sie buttona
@@ -48,6 +70,16 @@ $("document").ready(
                             function (){
                                $("#buttonMainPage a").slideDown(1500);
                             },2200    
+                         );
+                       setTimeout(
+                            function (){
+                               $("#name").removeClass("textDown").addClass("rubber");
+                            },3000    
+                         );
+                        setTimeout(
+                            function (){
+                               $("#name").removeClass("rubber");
+                            },5000    
                          );
                        }); 
                  });
@@ -81,6 +113,7 @@ $("document").ready(
                     position = "proj";
                            
                 });
+                     
         }
 );
 function showContAfterDescrip(){
@@ -117,15 +150,37 @@ function showDescripAfterProjec(){
                       });   
 }
 function showProjAfterDescrip(){
-    $("#description p, #description h3").animate({
-                         opacity:0
-                      },1000,function (){
-                          $("#description").css("display","none");
-                           $(".project").css("display","block");
-                            $(".project p").animate({
-                                opacity:1
-                            },500);
-                      });   
+      $("#description p, #description h3").addClass("rollOut");
+      setTimeout(
+        function (){
+            $("#description").css("display","none");
+            $(".project").css("display","block");
+           },2000    
+       );
+       setTimeout(
+        function (){
+            $("#description p, #description h3").removeClass("rollOut");
+            $(".project p").addClass("rollIn");
+           },2000    
+       );
+       setTimeout(
+        function (){
+            $(".project p").removeClass("rollIn");
+            $(".project p").css("opacity","1");
+           },4000    
+       );
+       
+//      $(".project").css("display","block");
+//      $(".project p").addClass("rollIn");
+//    $("#description p, #description h3").animate({
+//                         opacity:0
+//                      },1000,function (){
+//                          $("#description").css("display","none");
+//                           $(".project").css("display","block");
+//                            $(".project p").animate({
+//                                opacity:1
+//                            },500);
+//                      });   
 }
 function showProjAfterCont(){
     $("#contact h4, #contact p").animate({
