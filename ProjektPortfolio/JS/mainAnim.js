@@ -7,47 +7,80 @@ $("document").ready(
 //            console.log($(".project").html());
    
 //   -----------------------------------------------------------
-            $("#accessory").css("width","0");         //widzet
+            let width = screen.width;
+            let height = screen.height;
+            let heightTrian = height*0.35;
+            console.log(heightTrian);
+            let widthAcesory = 0;
+            if(width < height) widthAcesory = '40%';
+            else widthAcesory = '20%';
+                                            //change size window
+            $(window).resize(function (){
+                width = screen.width;
+                height = screen.height;
+                $("#clock").css("display","none");
+                $("#accessory").animate({
+                       width: 0
+                    },100,function (){
+                        $("#smallGuide, #bigGuide").removeClass("clockMove");
+                        $("#wigL").addClass("triangleL");
+                    });
+                if(width < height) widthAcesory = '40%';
+                else widthAcesory = '20%';
+            });
             
-            $("#wigL").click(
+            $("#accessory").css("width","0");         //widzet
+             
+            now = new Date();
+            
+            $("#wigR").click(
                 function() {
-                    $("#wigL").css("display","none");
+                    $("#wigR").removeClass("triangleR").removeAttr("style");
                     $("#accessory").animate({
                        width: 0
                     },1000,function (){
+                        $("#smallGuide, #bigGuide").removeClass("clockMove");
                         $("#clock").css("display","none");
-                        $("#wigR").css("display","block");
+                        $("#wigL").addClass("triangleL");
                     });
                 }
             );
-            $("#wigR").click(
+            $("#wigL").addClass("triangleL");
+            $("#wigL").click(
                 function() {
-                    $("#wigR").css("display","none");
-                    $("#clock").css("display","block")
+                    $("#wigL").removeClass("triangleL");
+                    $("#clock").css("display","block");
+                    $("#smallGuide, #bigGuide").addClass("clockMove");
+                    updateClock(now);
                     $("#accessory").animate({
-                       width: '20%' 
+                       width: widthAcesory 
                     },1000,function (){
                         $("#wigL").css("display","block");
+                        $("#wigR").addClass("triangleR");
+                        $(".triangleR").css({"border-left":"20px solid black",
+                                       "border-bottom":""+heightTrian+"px solid transparent",
+                                       "border-top":""+heightTrian+"px solid transparent"});
+//                        $("#wigR").addClass("triangleR");
                     });
                 }
             );
-//                                            poczatek zegara
-         $("#smallGuide, #bigGuide").addClass("clockMove");       
+//                                            poczatek zegara            
+                
+            function updateClock (now){
                 let minutes = document.querySelector("#bigGuide");
                 let hours = document.querySelector("#smallGuide");
-                now = new Date();
-                
                 let minu = now.getMinutes()*60 ;
                 let hour = now.getHours()*3600 ;
-                
+                minutes.style.animationDelay = '-'+ minu+'s';
+                hours.style.animationDelay = '-'+hour+'s';
+            }
+                      
                 let dayWeek = now.getDay();
                 let dayMonth = now.getDate();
                 let month = now.getMonth();
                 let year = now.getFullYear();
                 console.log(dayWeek,dayMonth,month,year);
-         
-                minutes.style.animationDelay = '-'+ minu+'s';
-                hours.style.animationDelay = '-'+hour+'s';
+
 
 // -------------------------------------------------------------           
             $("#name,#deepThink").css("opacity","0");    //animacja spadajacego tekstu i pojawiajacego sie buttona
@@ -81,8 +114,21 @@ $("document").ready(
                                $("#name").removeClass("rubber");
                             },5000    
                          );
+                        setTimeout(
+                            function (){
+                               $(".button a").addClass("pulse");
+                            },6000    
+                         );
                        }); 
                  });
+         $("#name").click(
+            function (){
+                  $(this).addClass("rubber");
+                  setTimeout(
+                    function() {
+                       $("#name").removeClass("rubber");
+                  },2100);
+            });
            //     --------------------------------------------------------------           
            
            var position = "descrip" ;
