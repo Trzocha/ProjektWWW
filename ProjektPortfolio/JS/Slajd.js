@@ -3,34 +3,50 @@ $("document").ready(
             basis();
             var szer = screen.width;
             var wys = screen.height;
+//            alert(szer); alert(wys);
          
-            if(szer < 768){
-                  animSlajder('120px','140px','70px'); //mobile
-                  
-              }
-             else if(szer < 1024){
-                  animSlajder('160px','200px','100px');  //tablet
-              }
-             else animSlajder('180px','200px','100px');  //laptop
-             
-             if(szer<wys)
-                  slnextToText(szer);   //small leater next to text
-             else
-                   slOnText(wys/10);   //small leater on text
+            setTimeout(
+              function (){
+                    if(szer < 768){
+                        animSlajder('80px','120px','0px'); //mobile 
+                    }
+                   else if(szer < 1024 && szer>wys){
+                        animSlajder('120px','160px','0px');  //tablet landscape
+                    }
+                   else animSlajder('160px','200px','0px');  //laptop
+
+                   if(szer<wys)
+                        slnextToText(szer);   //small leater next to text
+                   else
+                         slOnText(wys/12);   //small leater on text
+              },1000        
+            );
+//            if(szer < 768){
+//                  animSlajder('80px','120px','0px'); //mobile 
+//              }
+//             else if(szer < 1024 && szer>wys){
+//                  animSlajder('120px','160px','0px');  //tablet landscape
+//              }
+//             else animSlajder('160px','200px','0px');  //laptop
+//             
+//             if(szer<wys)
+//                  slnextToText(szer);   //small leater next to text
+//             else
+//                   slOnText(wys/12);   //small leater on text
              
             $(window).resize(
                   function(){
                       szer = screen.width;
                       wys = screen.height;
                       
-                      if(szer>=768 && szer < 1024)
-                         animSlajder('160px','200px','100px');  //tablet 
-                      else if(szer >= 1024 ) animSlajder('180px','200px','100px');  //laptop
+//                      if(szer>=768 && szer < 1024)
+//                         animSlajder('160px','200px','0px');  //tablet 
+//                      else if(szer >= 1024 ) animSlajder('180px','200px','0px');  //laptop
                       
                       if(szer<wys)
                         slnextToText(szer);   //small leater next to text
                       else
-                        slOnText(wys/10);   //small leater on text
+                        slOnText(wys/11);   //small leater on text
                   }
             );
                 
@@ -44,11 +60,15 @@ function basis(){
                 $(this).addClass("widoki");
             }
         );
+
         $("#obiektyImg div").each(
             function(){
                 $(this).addClass("kontenerImg");
-            }
-        );
+            });
+        $("#obiektyImg2 div").each(
+            function(){
+                $(this).addClass("kontenerImg");
+            });
 
         for(let i=0;i<6;i++){
             $("#"+i+" h6").css("visibility","hidden");
@@ -59,7 +79,7 @@ function basis(){
 
 function animSlajder(valHeightMin,valHeightMax,blackBelt){
     
-         $("#button").css("bottom","5%");
+//         $("#button").css("bottom","5%");
     
         let obiekt;
         let tresc;
@@ -69,29 +89,31 @@ function animSlajder(valHeightMin,valHeightMax,blackBelt){
                     $("#"+obiekt+" h6").css("visibility","hidden");
                     $(tresc).animate({
                      height: valHeightMin,
+                     width: valHeightMin,
                      opacity: 0.6
-                 },1000,function (){
-                     $(tresc+" h6").animate({
+                 },1000);
+                 
+                $(tresc+" h6").animate({
                          width: blackBelt
-                     },500);
-                    
-                 });
+                },500);
+                
                 }else{
                     $(tresc+" h6").css("visibility","hidden");
                     $(tresc).animate({
                      height: valHeightMin,
+                     width: valHeightMin,
                      opacity: 0.6
-                 },1000,function (){
-                     $(tresc+" h6").animate({
+                 },1000);
+                 
+                $(tresc+" h6").animate({
                          width: blackBelt
-                     },500);
-                     
-                 });
+                },500);
                  
                  obiekt = $(this).attr("id");
                  tresc = "#"+obiekt;
                 $(tresc).animate({
                      height: valHeightMax,
+                     width: valHeightMax,
                      opacity: 1
                   
                  },1000,function (){
@@ -100,10 +122,8 @@ function animSlajder(valHeightMin,valHeightMax,blackBelt){
                      },500);
                      $(tresc+" h6").css("visibility","visible");
                  });
-                
-                
                 }
-   
+            $(".kontenerImg").css("border-width","0px");
             }        
         );
 }

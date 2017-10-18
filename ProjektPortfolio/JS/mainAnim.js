@@ -1,5 +1,6 @@
 $("document").ready(
         function (){
+//            test1
 //           alert(screen.width);
 //           alert(screen.height);
 //            $("#opis p").
@@ -9,11 +10,11 @@ $("document").ready(
 //   -----------------------------------------------------------
             let width = screen.width;
             let height = screen.height;
-            let heightTrian = height*0.35;
-            console.log(heightTrian);
+           
             let widthAcesory = 0;
             if(width < height) widthAcesory = '40%';
             else widthAcesory = '20%';
+           
                                             //change size window
             $(window).resize(function (){
                 width = screen.width;
@@ -25,17 +26,16 @@ $("document").ready(
                         $("#smallGuide, #bigGuide").removeClass("clockMove");
                         $("#wigL").addClass("triangleL");
                     });
-                if(width < height) widthAcesory = '40%';
-                else widthAcesory = '20%';
+            if(width < height) widthAcesory = '40%';
+            else widthAcesory = '20%';
             });
             
             $("#accessory").css("width","0");         //widzet
              
-            now = new Date();
             
             $("#wigR").click(
                 function() {
-                    $("#wigR").removeClass("triangleR").removeAttr("style");
+                    $("#wigR").removeClass("triangleR");
                     $("#accessory").animate({
                        width: 0
                     },1000,function (){
@@ -45,28 +45,26 @@ $("document").ready(
                     });
                 }
             );
-            $("#wigL").addClass("triangleL");
+    
+            $("#wigL").addClass("triangleL");                  
             $("#wigL").click(
                 function() {
                     $("#wigL").removeClass("triangleL");
                     $("#clock").css("display","block");
                     $("#smallGuide, #bigGuide").addClass("clockMove");
-                    updateClock(now);
+                    updateClock();
                     $("#accessory").animate({
-                       width: widthAcesory 
+                       width: widthAcesory
                     },1000,function (){
                         $("#wigL").css("display","block");
                         $("#wigR").addClass("triangleR");
-                        $(".triangleR").css({"border-left":"20px solid black",
-                                       "border-bottom":""+heightTrian+"px solid transparent",
-                                       "border-top":""+heightTrian+"px solid transparent"});
-//                        $("#wigR").addClass("triangleR");
                     });
                 }
             );
 //                                            poczatek zegara            
                 
-            function updateClock (now){
+            function updateClock (){
+                now = new Date();
                 let minutes = document.querySelector("#bigGuide");
                 let hours = document.querySelector("#smallGuide");
                 let minu = now.getMinutes()*60 ;
@@ -75,11 +73,11 @@ $("document").ready(
                 hours.style.animationDelay = '-'+hour+'s';
             }
                       
-                let dayWeek = now.getDay();
-                let dayMonth = now.getDate();
-                let month = now.getMonth();
-                let year = now.getFullYear();
-                console.log(dayWeek,dayMonth,month,year);
+//                let dayWeek = now.getDay();
+//                let dayMonth = now.getDate();
+//                let month = now.getMonth();
+//                let year = now.getFullYear();
+//                console.log(dayWeek,dayMonth,month,year);
 
 
 // -------------------------------------------------------------           
@@ -159,7 +157,12 @@ $("document").ready(
                     position = "proj";
                            
                 });
-                     
+//             $("#wigL").click(
+//                    function (){
+//                        alert(("#wigR").attr("style"));
+//                         alert(height);
+//                    }        
+//             );        
         }
 );
 function showContAfterDescrip(){
@@ -185,7 +188,7 @@ function showDescripAfterCont(){
                       });    
 }
 function showDescripAfterProjec(){
-    $(".project p").animate({
+    $(".project p, .workTarget").animate({
                          opacity:0
                       },1000,function (){
                           $(".project").css("display","none");
@@ -206,27 +209,16 @@ function showProjAfterDescrip(){
        setTimeout(
         function (){
             $("#description p, #description h3").removeClass("rollOut");
-            $(".project p").addClass("rollIn");
+            $(".project p, .workTarget").addClass("rollIn");
            },2000    
        );
        setTimeout(
         function (){
-            $(".project p").removeClass("rollIn");
-            $(".project p").css("opacity","1");
+            $(".project p, .workTarget").removeClass("rollIn");
+            $(".project p, .workTarget").css("opacity","1");
            },4000    
        );
-       
-//      $(".project").css("display","block");
-//      $(".project p").addClass("rollIn");
-//    $("#description p, #description h3").animate({
-//                         opacity:0
-//                      },1000,function (){
-//                          $("#description").css("display","none");
-//                           $(".project").css("display","block");
-//                            $(".project p").animate({
-//                                opacity:1
-//                            },500);
-//                      });   
+        
 }
 function showProjAfterCont(){
     $("#contact h4, #contact p").animate({
@@ -234,13 +226,13 @@ function showProjAfterCont(){
                       },1000,function (){
                           $("#contact").css("display","none");
                            $(".project").css("display","block");
-                            $(".project p").animate({
+                            $(".project p, .workTarget").animate({
                                 opacity:1
                             },500);
                       });   
 }
 function showContAfterProjec(){
-    $(".project p").animate({
+    $(".project p, .workTarget").animate({
                          opacity:0
                       },1000,function (){
                           $(".project").css("display","none");
